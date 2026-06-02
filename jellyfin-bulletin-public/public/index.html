@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jellyfin Bulletin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="shell">
+        <section class="hero">
+            <p class="eyebrow">Jellyfin Bulletin</p>
+            <h1>New and coming soon on Jellyfin</h1>
+            <p class="lede">A live server bulletin for recent uploads, incoming requests, active downloads, and the current shape of the library.</p>
+            <div class="actions">
+                <a class="button" href="#new">Discover now</a>
+                <a class="button secondary" href="#status">Server status</a>
+            </div>
+        </section>
+
+        <section class="stats" id="stats" aria-label="Library snapshot"></section>
+
+        <section class="section" id="new">
+            <div class="sectionHead">
+                <h2>New films</h2>
+                <span class="sectionMeta">Recently recognised by Jellyfin</span>
+            </div>
+            <div class="rail" id="newMovies"></div>
+        </section>
+
+        <section class="section">
+            <div class="sectionHead">
+                <h2>New series</h2>
+                <span class="sectionMeta">Fresh seasons and episodes</span>
+            </div>
+            <div class="rail" id="newSeries"></div>
+        </section>
+
+        <section class="section">
+            <div class="sectionHead">
+                <h2>In cinemas soon</h2>
+                <span class="sectionMeta">Future releases from Radarr, Sonarr, and Jellyseerr</span>
+            </div>
+            <div class="rail" id="inCinemasSoon"></div>
+        </section>
+
+        <section class="section">
+            <div class="sectionHead">
+                <h2>Coming through the pipeline</h2>
+                <span class="sectionMeta">Requests and downloads getting closer</span>
+            </div>
+            <div class="rail" id="comingSoon"></div>
+        </section>
+
+        <section class="section">
+            <div class="sectionHead">
+                <h2>Downloading now</h2>
+                <span class="sectionMeta">Active qBittorrent transfers</span>
+            </div>
+            <div class="rail" id="downloads"></div>
+        </section>
+
+        <section class="section">
+            <div class="sectionHead">
+                <h2>Recent requests</h2>
+                <span class="sectionMeta">From Jellyseerr</span>
+            </div>
+            <div class="rail" id="requests"></div>
+        </section>
+
+        <section class="section" id="status">
+            <div class="sectionHead">
+                <h2>Server status</h2>
+                <span class="sectionMeta" id="generatedAt">Loading live values</span>
+            </div>
+            <div class="statusGrid" id="statusGrid"></div>
+            <div class="serviceStrip" id="services"></div>
+        </section>
+
+        <footer>
+            Jellyfin Bulletin updates from Jellyfin, Radarr, Sonarr, Jellyseerr, qBittorrent, and Bazarr.
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+:root {
+    --bg: #060606;
+    --panel: rgba(10, 10, 10, 0.84);
+    --panel-soft: rgba(22, 22, 22, 0.78);
+    --line: rgba(255, 255, 255, 0.16);
+    --text: #ffffff;
+    --muted: rgba(255, 255, 255, 0.72);
+    --red: #e50914;
+    --red-soft: rgba(229, 9, 20, 0.18);
+    --red-line: rgba(229, 9, 20, 0.44);
+    --red-dark: #9f050d;
+    --cyan: #00c8ff;
+    --green: #20d27d;
+    --amber: #f2b84b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(circle at 18% 0%, rgba(229, 9, 20, 0.34), transparent 28%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.74) 48%, rgba(0, 0, 0, 0.9) 100%),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80") center top / cover fixed,
+        var(--bg);
+    color: var(--text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.shell {
+    margin: 0 auto;
+    max-width: 1520px;
+    padding: 46px 28px 36px;
+}
+
+.hero {
+    min-height: 300px;
+    padding: 18px 0 36px;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    letter-spacing: 0;
+    line-height: 0.94;
+    margin: 0;
+    max-width: 920px;
+    text-shadow: 0 18px 55px rgba(0, 0, 0, 0.92);
+}
+
+.lede {
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(16px, 2vw, 21px);
+    font-weight: 500;
+    line-height: 1.45;
+    margin: 22px 0 28px;
+    max-width: 780px;
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.85);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button {
+    align-items: center;
+    background: var(--red);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    box-shadow: 0 16px 34px rgba(229, 9, 20, 0.2);
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: 900;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.button.secondary {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: none;
+}
+
+.stats {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin: -12px 0 34px;
+}
+
+.stat,
+.statusPanel {
+    background:
+        linear-gradient(145deg, rgba(229, 9, 20, 0.08), transparent 42%),
+        rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+}
+
+.stat {
+    min-height: 94px;
+    padding: 18px;
+}
+
+.stat strong {
+    color: var(--cyan);
+    display: block;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.section {
+    margin: 0 0 38px;
+}
+
+.sectionHead {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    margin: 0 0 14px;
+}
+
+h2 {
+    font-size: clamp(25px, 3vw, 36px);
+    margin: 0;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.sectionMeta {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.rail {
+    display: grid;
+    gap: 12px;
+}
+
+.empty {
+    background: rgba(0, 0, 0, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: var(--muted);
+    padding: 22px;
+}
+
+.mediaRow {
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.54) 58%, rgba(0, 0, 0, 0.78)),
+        var(--backdrop) center / cover;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    border-radius: 8px;
+    box-shadow: inset 4px 0 0 rgba(229, 9, 20, 0.42);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 118px minmax(0, 1fr) auto;
+    min-height: 170px;
+    overflow: hidden;
+    padding: 18px;
+}
+
+.poster {
+    align-self: center;
+    aspect-ratio: 2 / 3;
+    background:
+        linear-gradient(145deg, rgba(229, 9, 20, 0.32), transparent 48%),
+        #151515;
+    border-radius: 4px;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    width: 106px;
+}
+
+.poster img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.posterFallback {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.62);
+    display: flex;
+    font-size: 12px;
+    font-weight: 900;
+    height: 100%;
+    justify-content: center;
+    letter-spacing: 2px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mediaBody {
+    align-self: center;
+    min-width: 0;
+}
+
+.mediaTitle {
+    font-size: clamp(23px, 3vw, 36px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0 0 6px;
+}
+
+.mediaDate {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+.overview {
+    color: rgba(255, 255, 255, 0.9);
+    display: -webkit-box;
+    font-size: 15px;
+    line-height: 1.35;
+    margin: 0;
+    max-width: 1040px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.badges {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    min-width: 118px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    padding: 7px 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.badge.available {
+    background: rgba(32, 210, 125, 0.18);
+    border-color: rgba(32, 210, 125, 0.5);
+    color: #a7f5ce;
+}
+
+.badge.downloading {
+    background: rgba(0, 200, 255, 0.17);
+    border-color: rgba(0, 200, 255, 0.48);
+    color: #adf0ff;
+}
+
+.badge.requested,
+.badge.coming {
+    background: var(--red-soft);
+    border-color: var(--red-line);
+    color: #ffd4d7;
+}
+
+.statusGrid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.statusPanel {
+    padding: 18px;
+}
+
+.statusPanel h3 {
+    font-size: 18px;
+    margin: 0 0 14px;
+}
+
+.meter {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    height: 9px;
+    overflow: hidden;
+}
+
+.meter span {
+    background: linear-gradient(90deg, var(--red), #ff5d64 48%, var(--cyan));
+    display: block;
+    height: 100%;
+    width: var(--value);
+}
+
+.kv {
+    color: var(--muted);
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.serviceStrip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.service {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 7px 10px;
+}
+
+.service.connected {
+    border-color: rgba(32, 210, 125, 0.42);
+    color: #a7f5ce;
+}
+
+.service.offline {
+    border-color: rgba(229, 9, 20, 0.4);
+    color: #ffb8bd;
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    margin-top: 42px;
+    padding-top: 18px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .stats,
+    .statusGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mediaRow {
+        grid-template-columns: 88px minmax(0, 1fr);
+    }
+
+    .poster {
+        width: 84px;
+    }
+
+    .badges {
+        align-items: flex-start;
+        flex-direction: row;
+        grid-column: 2;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 620px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .shell {
+        padding: 24px 14px 28px;
+    }
+
+    .stats,
+    .statusGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionHead {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mediaRow {
+        gap: 12px;
+        grid-template-columns: 72px minmax(0, 1fr);
+        min-height: 142px;
+        padding: 12px;
+    }
+
+    .poster {
+        width: 72px;
+    }
+
+    .mediaDate {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .overview {
+        -webkit-line-clamp: 3;
+        font-size: 13px;
+    }
+}
