@@ -22,7 +22,7 @@ Private files:
 
 - `private/.env`
 
-<img width="1600" height="1400" alt="image" src="https://github.com/user-attachments/assets/5d66154b-c7fb-47cd-a821-172aa615ab11" />
+<img width="1501" height="252" alt="image" src="https://github.com/user-attachments/assets/99bc159e-ab09-4f38-a550-a95931fa7135" />
 
 
 ## Setup
