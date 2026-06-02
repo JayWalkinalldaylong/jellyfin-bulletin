@@ -1,6 +1,6 @@
-# JayFlix Bulletin
+# Jellyfin Bulletin
 
-JayFlix Bulletin is a Jellyfin-friendly dashboard/newsletter page for recently added media, upcoming Radarr/Sonarr items, qBittorrent downloads, Jellyseerr requests, and server status.
+Jellyfin Bulletin is a Jellyfin-friendly dashboard/newsletter page for recently added media, upcoming Radarr/Sonarr items, qBittorrent downloads, Jellyseerr requests, and server status.
 
 <img width="1600" height="1400" alt="image" src="https://github.com/user-attachments/assets/cfa1bc40-b0cb-4e88-bc3a-2ec62e983694" />
 
